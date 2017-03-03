@@ -1,0 +1,10 @@
+*.pyc
+*.swp
+*.DS_Store
+
+log/
+migrations/
+node_modules/
+
+nohup.out
+tags
