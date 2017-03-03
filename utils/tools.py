@@ -50,18 +50,15 @@ def md5_hash(value):
     hex_value = md5.hexdigest()
     return hex_value
 
+
 def rsa_decrypt(data, key):
     """RSA 解密
     """
-    print data
     data = base64.b64decode(data)
-    print data
-
     dsize = SHA.digest_size
     sentinel = Random.new().read(15 + dsize)
     cipher = pk_cipher.new(key)
     message = cipher.decrypt(data, sentinel)
-    #return message
 
     digest = SHA.new(message[:-dsize]).digest()
     if digest == message[-dsize:]:
